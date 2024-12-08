@@ -1,11 +1,7 @@
 const express = require("express");
 const app = express();
+const allRoutes = require("./src/Routes/index");
 
-app.get("/api/v1/data", (req, res) => {
-  res.json({
-    name: "Ahnaf-dev",
-    age: 20,
-  });
-});
+app.use(allRoutes);
 
 module.exports = { app };

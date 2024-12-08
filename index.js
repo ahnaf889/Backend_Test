@@ -1,9 +1,10 @@
 const { Dbconnect } = require("./src/Database/index");
+require("dotenv").config();
 const { app } = require("./app");
 
 Dbconnect()
   .then(() => {
-    app.listen(3000 || 5000, () => {
+    app.listen(process.env.PORT || 5000, () => {
       console.log("Server Running on port 3000");
     });
   })
